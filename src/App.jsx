@@ -27,36 +27,25 @@ function App() {
         <meta name="description" content="The official platform for Vidyarambh Preschool & Afterschool. Track attendance, academics, and communicate seamlessly." />
       </Helmet>
       
-      <div className="min-h-screen bg-background">
-        {/* Database Test Component - Remove this after testing */}
-        <div className="p-4">
-          <DatabaseTest />
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+        <div className="container mx-auto px-4 py-8">
+          <header className="text-center mb-8">
+            <h1 className="text-4xl font-bold text-gray-800 mb-2">
+              🚀 Horizons Visual Editor
+            </h1>
+            <p className="text-lg text-gray-600">
+              React-based visual editor with inline editing capabilities
+            </p>
+            <p className="text-sm text-green-600 mt-2">
+              ✅ Connected to GitHub & Hostinger - Auto-deploy enabled!
+            </p>
+          </header>
+          
+          <main className="space-y-8">
+            <Dashboard />
+            <DatabaseTest />
+          </main>
         </div>
-        
-        <AnimatePresence mode="wait">
-          {!user ? (
-            <motion.div
-              key="login"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <LoginPage onLogin={handleLogin} />
-            </motion.div>
-          ) : (
-            <motion.div
-              key="dashboard"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <Dashboard user={user} userRole={userRole} onLogout={handleLogout} />
-            </motion.div>
-          )}
-        </AnimatePresence>
-        <Toaster />
       </div>
     </>
   );
