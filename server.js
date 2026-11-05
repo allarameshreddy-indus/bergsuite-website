@@ -47,6 +47,36 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', message: 'Server is running' });
 });
 
+const inquiries = [];
+
+app.post('/api/inquiries', (req, res) => {
+  const body = req.body ?? {};
+  const name = String(body.name ?? "").trim();
+  const email = String(body.email ?? "").trim();
+  const message = String(body.message ?? "").trim();
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  if (!name || !emailOk || message.length < 20) {
+    res.status(400).json({
+      success: false,
+      message: "Name, a valid email, and a message of at least 20 characters are required.",
+    });
+    return;
+  }
+
+  const record = {
+    id: crypto.randomUUID(),
+    receivedAt: new Date().toISOString(),
+    ...body,
+    name,
+    email,
+    message,
+  };
+  inquiries.push(record);
+  console.log(`Inquiry ${record.id} (${body.intent || "general"})`);
+  res.status(201).json({ success: true, id: record.id });
+});
+
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 }); 

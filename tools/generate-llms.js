@@ -99,12 +99,34 @@ function extractHelmetData(content, filePath, routes) {
   const titleMatch = helmetContent.match(EXTRACTION_REGEX.title);
   const descMatch = helmetContent.match(EXTRACTION_REGEX.description);
   
-  const title = cleanText(titleMatch?.[1]);
-  const description = cleanText(descMatch?.[1]);
-  
   const fileName = path.basename(filePath, path.extname(filePath));
-  const url = routes.length && routes.has(fileName) 
-    ? routes.get(fileName) 
+  let title = cleanText(titleMatch?.[1]);
+  if (!title || /[{}`]/.test(title)) {
+    const fallbackTitles = {
+      Home: "Kriyzen Technologies",
+      About: "About · Kriyzen Technologies",
+      Services: "Services · Kriyzen Technologies",
+      ServiceDetail: "Service · Kriyzen Technologies",
+      Products: "Products · Kriyzen Technologies",
+      ProductDetail: "Product · Kriyzen Technologies",
+      Industries: "Industries · Kriyzen Technologies",
+      IndustryDetail: "Industry · Kriyzen Technologies",
+      Careers: "Careers · Kriyzen Technologies",
+      JobDetail: "Role · Kriyzen Technologies",
+      Contact: "Contact · Kriyzen Technologies",
+      Quote: "Get a Quote · Kriyzen Technologies",
+      CompanyVideo: "Company video · Kriyzen Technologies",
+      NotFound: "Page not found · Kriyzen Technologies",
+    };
+    title = fallbackTitles[fileName] || "Kriyzen Technologies";
+  }
+  let description = cleanText(descMatch?.[1]);
+  if (!description || /[{}`]/.test(description)) {
+    description = "Kriyzen Technologies builds products and consulting engagements in AI, data, cloud, and modern digital solutions.";
+  }
+  
+  const url = routes instanceof Map && routes.has(fileName)
+    ? routes.get(fileName)
     : generateFallbackUrl(fileName);
   
   return {
@@ -115,8 +137,25 @@ function extractHelmetData(content, filePath, routes) {
 }
 
 function generateFallbackUrl(fileName) {
-  const cleanName = fileName.replace(/Page$/, '').toLowerCase();
-  return cleanName === 'app' ? '/' : `/${cleanName}`;
+  const known = {
+    Home: "/",
+    About: "/about",
+    Services: "/services",
+    ServiceDetail: "/services",
+    Products: "/products",
+    ProductDetail: "/products",
+    Industries: "/industries",
+    IndustryDetail: "/industries",
+    Careers: "/careers",
+    JobDetail: "/careers",
+    Contact: "/contact",
+    Quote: "/quote",
+    CompanyVideo: "/company-video",
+    NotFound: "/404",
+  };
+  if (known[fileName]) return known[fileName];
+  const cleanName = fileName.replace(/Page$/, "").toLowerCase();
+  return cleanName === "app" || cleanName === "home" ? "/" : `/${cleanName}`;
 }
 
 function generateLlmsTxt(pages) {

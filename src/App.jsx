@@ -1,54 +1,41 @@
-import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Toaster } from '@/components/ui/toaster';
-import LoginPage from '@/components/LoginPage';
-import Dashboard from '@/components/Dashboard';
-import DatabaseTest from '@/components/DatabaseTest';
+import { Navigate, Route, Routes } from "react-router-dom";
+import Layout from "@/components/Layout";
+import About from "@/pages/About";
+import Careers from "@/pages/Careers";
+import CompanyVideo from "@/pages/CompanyVideo";
+import Contact from "@/pages/Contact";
+import Home from "@/pages/Home";
+import Industries from "@/pages/Industries";
+import IndustryDetail from "@/pages/IndustryDetail";
+import JobDetail from "@/pages/JobDetail";
+import NotFound from "@/pages/NotFound";
+import ProductDetail from "@/pages/ProductDetail";
+import Products from "@/pages/Products";
+import Quote from "@/pages/Quote";
+import ServiceDetail from "@/pages/ServiceDetail";
+import Services from "@/pages/Services";
 
-function App() {
-  const [user, setUser] = useState(null);
-  const [userRole, setUserRole] = useState(null);
-
-  const handleLogin = (userData, role) => {
-    setUser(userData);
-    setUserRole(role);
-  };
-
-  const handleLogout = () => {
-    setUser(null);
-    setUserRole(null);
-  };
-
-  return (
-    <>
-      <Helmet>
-        <title>Vidyarambh - Preschool & Afterschool Platform</title>
-        <meta name="description" content="The official platform for Vidyarambh Preschool & Afterschool. Track attendance, academics, and communicate seamlessly." />
-      </Helmet>
-      
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-        <div className="container mx-auto px-4 py-8">
-          <header className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-gray-800 mb-2">
-              🚀 Horizons Visual Editor
-            </h1>
-            <p className="text-lg text-gray-600">
-              React-based visual editor with inline editing capabilities
-            </p>
-            <p className="text-sm text-green-600 mt-2">
-              ✅ Connected to GitHub & Hostinger - Auto-deploy enabled!
-            </p>
-          </header>
-          
-          <main className="space-y-8">
-            <Dashboard />
-            <DatabaseTest />
-          </main>
-        </div>
-      </div>
-    </>
-  );
+export default function App() {
+	return (
+		<Routes>
+			<Route element={<Layout />}>
+				<Route index element={<Home />} />
+				<Route path="about" element={<About />} />
+				<Route path="services" element={<Services />} />
+				<Route path="services/:slug" element={<ServiceDetail />} />
+				<Route path="products" element={<Products />} />
+				<Route path="products/:slug" element={<ProductDetail />} />
+				<Route path="industries" element={<Industries />} />
+				<Route path="industries/:slug" element={<IndustryDetail />} />
+				<Route path="careers" element={<Careers />} />
+				<Route path="careers/apply" element={<JobDetail />} />
+				<Route path="careers/:slug" element={<JobDetail />} />
+				<Route path="contact" element={<Contact />} />
+				<Route path="quote" element={<Quote />} />
+				<Route path="get-a-quote" element={<Navigate to="/quote" replace />} />
+				<Route path="company-video" element={<CompanyVideo />} />
+				<Route path="*" element={<NotFound />} />
+			</Route>
+		</Routes>
+	);
 }
-
-export default App;

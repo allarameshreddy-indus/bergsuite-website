@@ -1,0 +1,15 @@
+## Pages
+- [About · Kriyzen Technologies](/about): Kriyzen Technologies builds products and consulting engagements in AI, data, cloud, and modern digital solutions.
+- [Careers · Kriyzen Technologies](/careers): Open roles at Kriyzen Technologies across engineering, data, design, and consulting.
+- [Company video · Kriyzen Technologies](/company-video): A short introduction to Kriyzen Technologies: products, consulting, and how an engagement starts.
+- [Contact · Kriyzen Technologies](/contact): Contact Kriyzen Technologies about a product, a consulting engagement, or a role.
+- [Get a Quote · Kriyzen Technologies](/quote): Request a quote from Kriyzen Technologies for a product, a build, or a consulting engagement.
+- [Industries · Kriyzen Technologies](/industries): Kriyzen Technologies works with education, healthcare, financial services, manufacturing, and the public sector.
+- [Industry · Kriyzen Technologies](/industries): Kriyzen Technologies builds products and consulting engagements in AI, data, cloud, and modern digital solutions.
+- [Kriyzen Technologies · Building Intelligent Solutions for a Better Tomorrow](/): Kriyzen Technologies builds products and consulting engagements in AI, data, cloud, and modern digital solutions.
+- [Page not found · Kriyzen Technologies](/404): This page is not on the Kriyzen Technologies site.
+- [Product · Kriyzen Technologies](/products): Kriyzen Technologies builds products and consulting engagements in AI, data, cloud, and modern digital solutions.
+- [Products · Kriyzen Technologies](/products): Kriyzen Pulse, Atlas, Harbor, and Forge. Four live products for operations, data, cloud, and delivery.
+- [Role · Kriyzen Technologies](/careers): Kriyzen Technologies builds products and consulting engagements in AI, data, cloud, and modern digital solutions.
+- [Service · Kriyzen Technologies](/services): Kriyzen Technologies builds products and consulting engagements in AI, data, cloud, and modern digital solutions.
+- [Services · Kriyzen Technologies](/services): Application development, AI and data, cloud and DevOps, product engineering, analytics, and staffing from Kriyzen Technologies.
