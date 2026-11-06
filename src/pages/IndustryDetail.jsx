@@ -1,8 +1,8 @@
 import { Helmet } from "react-helmet";
 import { Link, useParams } from "react-router-dom";
-import PageHero, { CtaBand } from "@/components/PageHero";
+import PageHero, { CtaBand, SectionPhoto } from "@/components/PageHero";
 import NotFound from "@/pages/NotFound";
-import { findBySlug, industries, products, services } from "@/data/site";
+import { findBySlug, industries, pageImages, products, services } from "@/data/site";
 
 export default function IndustryDetail() {
 	const { slug } = useParams();
@@ -20,7 +20,12 @@ export default function IndustryDetail() {
 				title={industry.name}
 				lede={industry.lede}
 				crumbs={[{ label: "Home", to: "/" }, { label: "Industries", to: "/industries" }, { label: industry.name }]}
+				image={industry.image}
+				imageAlt={industry.imageAlt}
 			/>
+			<section className="mx-auto max-w-6xl px-4 pt-12 sm:px-6">
+				<SectionPhoto src={pageImages.institution[0]} alt={pageImages.institution[1]} />
+			</section>
 			<section className="mx-auto grid max-w-6xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[1.1fr_0.9fr]">
 				<div>
 					<h2 className="text-3xl font-extrabold tracking-tight">Where we help</h2>
@@ -38,7 +43,8 @@ export default function IndustryDetail() {
 						<ul className="mt-3 space-y-2">
 							{services.slice(0, 4).map((service) => (
 								<li key={service.slug}>
-									<Link to={`/services/${service.slug}`} className="font-semibold text-[#1563d6]">
+									<Link to={`/services/${service.slug}`} className="flex items-center gap-3 font-semibold text-[#1563d6]">
+										<img src={service.image} alt="" className="h-12 w-16 rounded-lg object-cover" />
 										{service.name}
 									</Link>
 								</li>
@@ -50,7 +56,8 @@ export default function IndustryDetail() {
 						<ul className="mt-3 space-y-2">
 							{products.map((product) => (
 								<li key={product.slug}>
-									<Link to={`/products/${product.slug}`} className="font-semibold text-[#1563d6]">
+									<Link to={`/products/${product.slug}`} className="flex items-center gap-3 font-semibold text-[#1563d6]">
+										<img src={product.image} alt="" className="h-12 w-16 rounded-lg object-cover" />
 										{product.name}
 									</Link>
 								</li>

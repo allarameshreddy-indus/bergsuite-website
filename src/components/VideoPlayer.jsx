@@ -41,7 +41,9 @@ export default function VideoPlayer({ labelledBy }) {
 
 	return (
 		<div className="overflow-hidden rounded-3xl border border-white/10 bg-[#07101f] text-white shadow-2xl">
-			<div className="relative aspect-video bg-[radial-gradient(ellipse_at_70%_40%,rgba(40,120,220,0.45),transparent_55%),linear-gradient(160deg,#0a1d4a,#07101f)]">
+			<div className="relative aspect-video bg-[#07101f]">
+				{slide.image ? <img src={slide.image} alt="" className="absolute inset-0 h-full w-full object-cover" /> : null}
+				<div className="absolute inset-0 bg-gradient-to-t from-[#07101f] via-[#07101f]/80 to-[#07101f]/20" />
 				<div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-10">
 					<p className="text-xs font-bold tracking-[0.22em] text-sky-300">{slide.kicker}</p>
 					<h2 id={labelledBy} className="mt-3 max-w-xl text-3xl font-extrabold tracking-tight sm:text-4xl">
@@ -92,11 +94,12 @@ export default function VideoPlayer({ labelledBy }) {
 						<li key={item.kicker}>
 							<button
 								type="button"
-								className={`w-full rounded-xl px-2 py-2 text-left text-xs font-semibold ${itemIndex === index ? "bg-white text-[#071633]" : "bg-white/5 text-slate-300 hover:bg-white/10"}`}
+								className={`w-full overflow-hidden rounded-xl text-left text-xs font-semibold ${itemIndex === index ? "bg-white text-[#071633]" : "bg-white/5 text-slate-300 hover:bg-white/10"}`}
 								aria-current={itemIndex === index ? "true" : undefined}
 								onClick={() => go(itemIndex)}
 							>
-								{item.kicker}
+								{item.image ? <img src={item.image} alt="" className="aspect-[16/9] w-full object-cover" /> : null}
+								<span className="block px-2 py-2">{item.kicker}</span>
 							</button>
 						</li>
 					))}

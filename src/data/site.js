@@ -405,28 +405,86 @@ export const videoSlides = [
 		kicker: "Kriyzen Technologies",
 		title: "Innovation, technology, and people.",
 		body: "We are a product and consulting company. We build software, and we stay until it is useful.",
+		image: "/images/video-stage.jpg",
+		imageAlt: "A dark screening room facing a curved display of a blue globe and an orange arc of light",
 	},
 	{
 		kicker: "The work",
 		title: "Intelligent solutions for a better tomorrow.",
 		body: "AI, data, cloud, and modern applications for businesses and institutions that need the work to hold up on a Tuesday.",
+		image: "/images/services-floor.jpg",
+		imageAlt: "A studio table where a team reviews work under navy walls and warm light",
 	},
 	{
 		kicker: "Products",
 		title: "Four live products, and the teams behind them.",
 		body: "Pulse, Atlas, Harbor, and Forge. The same people who build them also deliver with clients.",
+		image: "/images/products-lab.jpg",
+		imageAlt: "Four dark displays in a lab showing abstract blue dashboards with orange edge light",
 	},
 	{
 		kicker: "The practice",
 		title: "A bench you can work with.",
 		body: "4+ products live. 50+ professionals. 10+ client partnerships. 5+ industries, from education to public institutions.",
+		image: "/images/careers-team.jpg",
+		imageAlt: "A hybrid workspace with navy panels, blue daylight, and orange cups on the desks",
 	},
 	{
 		kicker: "Start",
 		title: "Tell us what you want to change.",
 		body: "A useful first conversation covers the outcome, the constraint, and who the work is for.",
+		image: "/images/contact-conversation.jpg",
+		imageAlt: "Two people talking in a navy meeting room with blue city light through the glass",
 	},
 ];
+
+const mediaBySlug = {
+	"application-development": ["/images/service-applications.jpg", "A product desk with a navy notebook, an orange stylus, and a blank tablet"],
+	"ai-data-solutions": ["/images/service-ai.jpg", "Blue glass nodes and orange filaments arranged like a model on a dark table"],
+	"cloud-devops": ["/images/service-cloud.jpg", "Navy server cabinets with blue status lights and one warm indicator"],
+	"product-engineering": ["/images/service-product.jpg", "A workshop bench with a matte device shell and blue models"],
+	"data-analytics": ["/images/service-analytics.jpg", "An analytics wall of abstract blue curves with a single orange highlight"],
+	"staffing-consulting": ["/images/service-staffing.jpg", "A small huddle beside a navy glass wall with an orange chair nearby"],
+	pulse: ["/images/product-pulse.jpg", "Abstract blue pulse rings and an orange glow on a dark operations board"],
+	atlas: ["/images/product-atlas.jpg", "Stacked translucent blue map layers on a navy plinth with an orange contour"],
+	harbor: ["/images/product-harbor.jpg", "Receding piers of blue server light in navy fog with an orange beacon"],
+	forge: ["/images/product-forge.jpg", "A dark workbench where blue blocks assemble beside orange light"],
+	education: ["/images/industry-education.jpg", "A campus courtyard at blue hour with warm light in a library colonnade"],
+	healthcare: ["/images/industry-healthcare.jpg", "A quiet hospital corridor in soft blue light with a warm glow ahead"],
+	"financial-services": ["/images/industry-finance.jpg", "An after-hours operations floor with blue monitor glow and one orange lamp"],
+	manufacturing: ["/images/industry-manufacturing.jpg", "A clean factory floor with cobalt machinery and an orange safety line"],
+	"public-sector": ["/images/industry-public.jpg", "A civic stone building at twilight with blue glass doors and warm interior light"],
+	"senior-application-engineer": ["/images/role-application-engineer.jpg", "A desk with two monitors showing an abstract blue field and an orange mug"],
+	"data-engineer": ["/images/role-data-engineer.jpg", "Blue fiber and stacked glass trays with a warm orange connector"],
+	"cloud-devops-engineer": ["/images/role-cloud-engineer.jpg", "A person from behind beside an open rack of blue equipment holding an orange cable"],
+	"product-designer": ["/images/role-designer.jpg", "A design table with abstract paper shapes, blue pencils, and an orange swatch"],
+	"ai-engineer": ["/images/role-ai-engineer.jpg", "A sculpture of blue light threads and one orange node on a dark desk"],
+	"consulting-manager": ["/images/role-consulting-manager.jpg", "A person walking a navy corridor past glass rooms lit blue, with one orange doorway"],
+};
+
+for (const item of [...services, ...products, ...industries, ...jobs]) {
+	const media = mediaBySlug[item.slug];
+	if (media) {
+		item.image = media[0];
+		item.imageAlt = media[1];
+	}
+}
+
+export const pageImages = {
+	homeHero: ["/images/home-hero.jpg", "A dark operations room and a luminous globe washed in blue and orange light"],
+	about: ["/images/about-studio.jpg", "A calm product studio with navy walls, a long table, and one orange lamp"],
+	services: ["/images/services-floor.jpg", "A team around a studio table under navy walls and warm light"],
+	products: ["/images/products-lab.jpg", "A product lab with dark displays and orange edge lighting"],
+	industries: ["/images/industries-city.jpg", "A dusk skyline mixing campus, care, factory, and civic buildings"],
+	careers: ["/images/careers-team.jpg", "A hybrid workspace with navy panels, daylight, and orange cups"],
+	contact: ["/images/contact-conversation.jpg", "A quiet conversation in a navy meeting room"],
+	quote: ["/images/quote-planning.jpg", "A planning table with sketches, a navy folder, and an orange pencil"],
+	video: ["/images/video-stage.jpg", "A screening room facing an abstract blue and orange frame"],
+	delivery: ["/images/section-delivery.jpg", "Blank navy workshop panels marked only with blue tape and an orange tray"],
+	platform: ["/images/section-platform.jpg", "A long control desk and abstract blue topology on dark glass"],
+	institution: ["/images/section-institution.jpg", "An evening courtyard of glass and stone with blue reflections and orange lanterns"],
+	hiring: ["/images/section-hiring.jpg", "A hiring conversation across a navy table in blue daylight"],
+};
 
 export const quoteServices = [
 	{ value: "", label: "Select a service" },

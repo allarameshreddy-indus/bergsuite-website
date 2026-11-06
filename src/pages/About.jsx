@@ -1,22 +1,28 @@
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
-import { CtaBand } from "@/components/PageHero";
+import { CtaBand, SectionPhoto } from "@/components/PageHero";
 import PageHero from "@/components/PageHero";
-import { company, stats } from "@/data/site";
+import { company, pageImages, stats } from "@/data/site";
 import { Icon } from "@/components/Icons";
 
 const beliefs = [
 	{
 		title: "Innovation",
 		body: "A new system is justified when it changes a decision, a service, or a day of work. We would rather ship a narrow product than a wide promise.",
+		image: "/images/service-product.jpg",
+		imageAlt: "A workshop bench with a matte device shell and blue models",
 	},
 	{
 		title: "Technology",
 		body: "AI, data platforms, cloud, and applications are the tools. We pick them after the problem is clear, and we leave behind something a team can operate.",
+		image: "/images/section-platform.jpg",
+		imageAlt: "A control desk with abstract blue light on dark glass",
 	},
 	{
 		title: "People",
 		body: "Delivery depends on who is in the room. Our consultants and engineers stay accountable past the launch, and we hire for judgment as much as skill.",
+		image: "/images/section-hiring.jpg",
+		imageAlt: "A conversation across a navy table in blue daylight",
 	},
 ];
 
@@ -32,7 +38,12 @@ export default function About() {
 				title="A product company with a consulting practice."
 				lede={company.summary}
 				crumbs={[{ label: "Home", to: "/" }, { label: "About" }]}
+				image={pageImages.about[0]}
+				imageAlt={pageImages.about[1]}
 			/>
+			<section className="mx-auto max-w-6xl px-4 pt-12 sm:px-6">
+				<SectionPhoto src={pageImages.delivery[0]} alt={pageImages.delivery[1]} />
+			</section>
 			<section className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.2fr_0.8fr]">
 				<div>
 					<h2 className="text-3xl font-extrabold tracking-tight">What we are here to do</h2>
@@ -67,9 +78,12 @@ export default function About() {
 					<h2 className="text-3xl font-extrabold tracking-tight">Innovation, technology, people</h2>
 					<ul className="mt-8 grid gap-5 md:grid-cols-3">
 						{beliefs.map((item) => (
-							<li key={item.title} className="rounded-3xl border border-[#e6eef6] p-6">
-								<h3 className="text-xl font-extrabold">{item.title}</h3>
-								<p className="mt-3 text-sm leading-6 text-[#3d516c]">{item.body}</p>
+							<li key={item.title} className="overflow-hidden rounded-3xl border border-[#e6eef6]">
+								<img src={item.image} alt={item.imageAlt} className="aspect-[16/10] w-full object-cover" />
+								<div className="p-6">
+									<h3 className="text-xl font-extrabold">{item.title}</h3>
+									<p className="mt-3 text-sm leading-6 text-[#3d516c]">{item.body}</p>
+								</div>
 							</li>
 						))}
 					</ul>

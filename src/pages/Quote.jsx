@@ -1,8 +1,8 @@
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import InquiryForm from "@/components/InquiryForm";
-import PageHero from "@/components/PageHero";
-import { budgets, quoteProducts, quoteServices, timelines } from "@/data/site";
+import PageHero, { SectionPhoto } from "@/components/PageHero";
+import { budgets, pageImages, quoteProducts, quoteServices, timelines } from "@/data/site";
 
 export default function Quote() {
 	return (
@@ -16,10 +16,13 @@ export default function Quote() {
 				title="Tell us what you want to change."
 				lede="A useful quote starts with the outcome, who it is for, and the constraint you already know. Budget and timeline can be approximate."
 				crumbs={[{ label: "Home", to: "/" }, { label: "Get a Quote" }]}
+				image={pageImages.quote[0]}
+				imageAlt={pageImages.quote[1]}
 			/>
 			<section className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.7fr_1.3fr]">
 				<div>
-					<h2 className="text-2xl font-extrabold">What we send back</h2>
+					<SectionPhoto src={pageImages.services[0]} alt={pageImages.services[1]} />
+					<h2 className="mt-6 text-2xl font-extrabold">What we send back</h2>
 					<ul className="mt-4 space-y-3 text-sm leading-6 text-[#3d516c]">
 						<li className="rounded-2xl bg-white p-4 shadow-sm">Whether the work looks like a product, a delivery team, or advice.</li>
 						<li className="rounded-2xl bg-white p-4 shadow-sm">A suggested first release, not a catalogue of everything we could do.</li>

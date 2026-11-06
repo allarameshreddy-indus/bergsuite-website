@@ -5,20 +5,26 @@ import Globe from "@/components/Globe";
 import { Icon } from "@/components/Icons";
 import { CtaBand } from "@/components/PageHero";
 import { useCompanyVideo } from "@/components/VideoModal";
-import { company, heroChips, industries, products, services, stats } from "@/data/site";
+import { company, heroChips, industries, pageImages, products, services, stats } from "@/data/site";
 
 const pillars = [
 	{
 		title: "Innovation",
 		body: "We look for the change that is worth building, then keep the first release small enough to learn from.",
+		image: "/images/service-product.jpg",
+		imageAlt: "A workshop bench with a device shell and blue models under warm light",
 	},
 	{
 		title: "Technology",
 		body: "AI, data, cloud, and applications, chosen because they fit the problem. The stack is a means.",
+		image: "/images/service-ai.jpg",
+		imageAlt: "Blue glass nodes and orange filaments on a dark table",
 	},
 	{
 		title: "People",
 		body: "Fifty-plus engineers, designers, and consultants who stay close to the work after go-live.",
+		image: "/images/careers-team.jpg",
+		imageAlt: "A hybrid workspace with navy panels and daylight across the desks",
 	},
 ];
 
@@ -34,7 +40,12 @@ export default function Home() {
 			</Helmet>
 
 			<section className="hero-sky relative overflow-hidden text-white">
-				<div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.15fr)] lg:py-16">
+				<img
+					src={pageImages.homeHero[0]}
+					alt={pageImages.homeHero[1]}
+					className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-35"
+				/>
+				<div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.15fr)] lg:py-16">
 					<div>
 						<p className="flex flex-wrap items-center gap-3 text-[0.78rem] font-bold tracking-[0.28em] text-white/85">
 							<span>{company.tagline}</span>
@@ -120,13 +131,16 @@ export default function Home() {
 							<li key={service.slug}>
 								<Link
 									to={`/services/${service.slug}`}
-									className="flex h-full flex-col rounded-3xl border border-[#e6eef6] bg-white p-6 shadow-[0_10px_30px_rgba(16,40,80,0.04)] transition hover:-translate-y-1 hover:border-[#c9def8] hover:shadow-[0_16px_40px_rgba(16,40,80,0.08)]"
+									className="flex h-full flex-col overflow-hidden rounded-3xl border border-[#e6eef6] bg-white shadow-[0_10px_30px_rgba(16,40,80,0.04)] transition hover:-translate-y-1 hover:border-[#c9def8] hover:shadow-[0_16px_40px_rgba(16,40,80,0.08)]"
 								>
-									<span className={`grid h-12 w-12 place-items-center rounded-2xl ${service.tint}`}>
-										<Icon name={service.icon} className="h-6 w-6" />
+									<img src={service.image} alt={service.imageAlt} className="aspect-[4/3] w-full object-cover" />
+									<span className="p-6">
+										<span className={`grid h-12 w-12 place-items-center rounded-2xl ${service.tint}`}>
+											<Icon name={service.icon} className="h-6 w-6" />
+										</span>
+										<h3 className="mt-5 text-lg font-extrabold tracking-tight">{service.name}</h3>
+										<p className="mt-2 text-sm leading-6 text-[#5c6d84]">{service.blurb}</p>
 									</span>
-									<h3 className="mt-5 text-lg font-extrabold tracking-tight">{service.name}</h3>
-									<p className="mt-2 text-sm leading-6 text-[#5c6d84]">{service.blurb}</p>
 								</Link>
 							</li>
 						))}
@@ -143,9 +157,12 @@ export default function Home() {
 					</p>
 					<ul className="mt-8 grid gap-5 md:grid-cols-3">
 						{pillars.map((pillar) => (
-							<li key={pillar.title} className="rounded-3xl border border-[#e6eef6] bg-[#f8fbff] p-6">
-								<h3 className="text-xl font-extrabold">{pillar.title}</h3>
-								<p className="mt-2 text-sm leading-6 text-[#3d516c]">{pillar.body}</p>
+							<li key={pillar.title} className="overflow-hidden rounded-3xl border border-[#e6eef6] bg-[#f8fbff]">
+								<img src={pillar.image} alt={pillar.imageAlt} className="aspect-[16/10] w-full object-cover" />
+								<div className="p-6">
+									<h3 className="text-xl font-extrabold">{pillar.title}</h3>
+									<p className="mt-2 text-sm leading-6 text-[#3d516c]">{pillar.body}</p>
+								</div>
 							</li>
 						))}
 					</ul>
@@ -166,12 +183,15 @@ export default function Home() {
 					<ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
 						{industries.map((industry) => (
 							<li key={industry.slug}>
-								<Link to={`/industries/${industry.slug}`} className="block h-full rounded-2xl bg-white p-5 shadow-sm hover:-translate-y-0.5 hover:shadow-md">
-									<span className="grid h-10 w-10 place-items-center rounded-xl bg-[#e8f2ff] text-[#1d7af0]">
-										<Icon name={industry.icon} className="h-5 w-5" />
+								<Link to={`/industries/${industry.slug}`} className="block h-full overflow-hidden rounded-2xl bg-white shadow-sm hover:-translate-y-0.5 hover:shadow-md">
+									<img src={industry.image} alt={industry.imageAlt} className="aspect-[4/3] w-full object-cover" />
+									<span className="block p-5">
+										<span className="grid h-10 w-10 place-items-center rounded-xl bg-[#e8f2ff] text-[#1d7af0]">
+											<Icon name={industry.icon} className="h-5 w-5" />
+										</span>
+										<h3 className="mt-4 font-bold">{industry.name}</h3>
+										<p className="mt-2 text-sm leading-6 text-[#5c6d84]">{industry.summary}</p>
 									</span>
-									<h3 className="mt-4 font-bold">{industry.name}</h3>
-									<p className="mt-2 text-sm leading-6 text-[#5c6d84]">{industry.summary}</p>
 								</Link>
 							</li>
 						))}
@@ -193,10 +213,13 @@ export default function Home() {
 					<ul className="mt-8 grid gap-5 md:grid-cols-2">
 						{products.map((product) => (
 							<li key={product.slug}>
-								<Link to={`/products/${product.slug}`} className="block h-full rounded-3xl border border-[#e6eef6] p-6 hover:border-[#c9def8]">
-									<p className="text-xs font-bold tracking-[0.16em] text-[#e06a00]">{product.eyebrow.toUpperCase()}</p>
-									<h3 className="mt-2 text-2xl font-extrabold">{product.name}</h3>
-									<p className="mt-2 text-sm leading-6 text-[#3d516c]">{product.summary}</p>
+								<Link to={`/products/${product.slug}`} className="block h-full overflow-hidden rounded-3xl border border-[#e6eef6] hover:border-[#c9def8]">
+									<img src={product.image} alt={product.imageAlt} className="aspect-[16/9] w-full object-cover" />
+									<span className="block p-6">
+										<p className="text-xs font-bold tracking-[0.16em] text-[#e06a00]">{product.eyebrow.toUpperCase()}</p>
+										<h3 className="mt-2 text-2xl font-extrabold">{product.name}</h3>
+										<p className="mt-2 text-sm leading-6 text-[#3d516c]">{product.summary}</p>
+									</span>
 								</Link>
 							</li>
 						))}

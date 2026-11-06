@@ -26,18 +26,31 @@ export function Breadcrumbs({ items }) {
 	);
 }
 
-export default function PageHero({ eyebrow, title, lede, crumbs }) {
+export default function PageHero({ eyebrow, title, lede, crumbs, image, imageAlt }) {
 	return (
 		<section className="relative overflow-hidden bg-[#071633] text-white">
-			<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_85%_0%,rgba(46,140,255,0.4),transparent_50%)]" />
-			<div className="relative mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16">
-				{crumbs ? <Breadcrumbs items={crumbs} /> : null}
-				{eyebrow ? <p className="mt-5 text-xs font-bold tracking-[0.22em] text-sky-300">{eyebrow}</p> : null}
-				<h1 className="mt-3 max-w-3xl text-4xl font-extrabold tracking-tight sm:text-5xl">{title}</h1>
-				{lede ? <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-300">{lede}</p> : null}
+			<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_0%,rgba(46,140,255,0.35),transparent_50%)]" />
+			<div className={`relative mx-auto grid max-w-6xl items-center gap-8 px-4 py-14 sm:px-6 sm:py-16 ${image ? "lg:grid-cols-[1.15fr_0.85fr]" : ""}`}>
+				<div>
+					{crumbs ? <Breadcrumbs items={crumbs} /> : null}
+					{eyebrow ? <p className="mt-5 text-xs font-bold tracking-[0.22em] text-sky-300">{eyebrow}</p> : null}
+					<h1 className="mt-3 max-w-3xl text-4xl font-extrabold tracking-tight sm:text-5xl">{title}</h1>
+					{lede ? <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-300">{lede}</p> : null}
+				</div>
+				{image ? (
+					<img
+						src={image}
+						alt={imageAlt || ""}
+						className="aspect-[16/10] w-full rounded-3xl object-cover shadow-[0_24px_60px_rgba(0,0,0,0.35)] ring-1 ring-white/15"
+					/>
+				) : null}
 			</div>
 		</section>
 	);
+}
+
+export function SectionPhoto({ src, alt }) {
+	return <img src={src} alt={alt} className="aspect-[16/8] w-full rounded-3xl object-cover" />;
 }
 
 export function CtaBand({ title, body }) {

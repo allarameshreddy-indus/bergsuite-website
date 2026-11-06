@@ -1,8 +1,8 @@
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { Icon } from "@/components/Icons";
-import PageHero, { CtaBand } from "@/components/PageHero";
-import { industries } from "@/data/site";
+import PageHero, { CtaBand, SectionPhoto } from "@/components/PageHero";
+import { industries, pageImages } from "@/data/site";
 
 export default function Industries() {
 	return (
@@ -16,21 +16,29 @@ export default function Industries() {
 				title="Industries"
 				lede="We work where software has to respect an institution: education, healthcare, financial services, manufacturing, and the public sector."
 				crumbs={[{ label: "Home", to: "/" }, { label: "Industries" }]}
+				image={pageImages.industries[0]}
+				imageAlt={pageImages.industries[1]}
 			/>
 			<section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
 				<ul className="grid gap-5 md:grid-cols-2">
 					{industries.map((industry) => (
 						<li key={industry.slug}>
-							<Link to={`/industries/${industry.slug}`} className="block h-full rounded-3xl border border-[#e6eef6] bg-white p-6 hover:-translate-y-0.5 hover:shadow-md">
-								<span className="grid h-12 w-12 place-items-center rounded-2xl bg-[#e8f2ff] text-[#1d7af0]">
-									<Icon name={industry.icon} className="h-6 w-6" />
+							<Link to={`/industries/${industry.slug}`} className="block h-full overflow-hidden rounded-3xl border border-[#e6eef6] bg-white hover:-translate-y-0.5 hover:shadow-md">
+								<img src={industry.image} alt={industry.imageAlt} className="aspect-[16/9] w-full object-cover" />
+								<span className="block p-6">
+									<span className="grid h-12 w-12 place-items-center rounded-2xl bg-[#e8f2ff] text-[#1d7af0]">
+										<Icon name={industry.icon} className="h-6 w-6" />
+									</span>
+									<h2 className="mt-5 text-2xl font-extrabold">{industry.name}</h2>
+									<p className="mt-2 text-[#3d516c]">{industry.summary}</p>
 								</span>
-								<h2 className="mt-5 text-2xl font-extrabold">{industry.name}</h2>
-								<p className="mt-2 text-[#3d516c]">{industry.summary}</p>
 							</Link>
 						</li>
 					))}
 				</ul>
+				<div className="mt-10">
+					<SectionPhoto src={pageImages.institution[0]} alt={pageImages.institution[1]} />
+				</div>
 			</section>
 			<CtaBand title="Your sector may not be on this list." body="If the problem is a product, a data platform, or a team that can deliver, write to us anyway. We will say if we are the right firm." />
 		</>

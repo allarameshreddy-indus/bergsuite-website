@@ -1,9 +1,9 @@
 import { Helmet } from "react-helmet";
 import { Link, useParams } from "react-router-dom";
 import { Icon } from "@/components/Icons";
-import PageHero, { CtaBand } from "@/components/PageHero";
+import PageHero, { CtaBand, SectionPhoto } from "@/components/PageHero";
 import NotFound from "@/pages/NotFound";
-import { findBySlug, products, services } from "@/data/site";
+import { findBySlug, pageImages, products, services } from "@/data/site";
 
 export default function ServiceDetail() {
 	const { slug } = useParams();
@@ -22,7 +22,12 @@ export default function ServiceDetail() {
 				title={service.name}
 				lede={service.lede}
 				crumbs={[{ label: "Home", to: "/" }, { label: "Services", to: "/services" }, { label: service.name }]}
+				image={service.image}
+				imageAlt={service.imageAlt}
 			/>
+			<section className="mx-auto max-w-6xl px-4 pt-12 sm:px-6">
+				<SectionPhoto src={pageImages.delivery[0]} alt={pageImages.delivery[1]} />
+			</section>
 			<section className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.15fr_0.85fr]">
 				<div>
 					<h2 className="text-3xl font-extrabold tracking-tight">What this practice delivers</h2>
@@ -51,9 +56,12 @@ export default function ServiceDetail() {
 					<ul className="mt-6 grid gap-4 md:grid-cols-3">
 						{products.slice(0, 3).map((product) => (
 							<li key={product.slug}>
-								<Link to={`/products/${product.slug}`} className="block rounded-2xl border border-[#e6eef6] p-5 hover:border-[#c9def8]">
-									<h3 className="font-bold">{product.name}</h3>
-									<p className="mt-2 text-sm text-[#5c6d84]">{product.summary}</p>
+								<Link to={`/products/${product.slug}`} className="block overflow-hidden rounded-2xl border border-[#e6eef6] hover:border-[#c9def8]">
+									<img src={product.image} alt={product.imageAlt} className="aspect-[16/9] w-full object-cover" />
+									<span className="block p-5">
+										<h3 className="font-bold">{product.name}</h3>
+										<p className="mt-2 text-sm text-[#5c6d84]">{product.summary}</p>
+									</span>
 								</Link>
 							</li>
 						))}
@@ -62,11 +70,14 @@ export default function ServiceDetail() {
 					<ul className="mt-4 grid gap-3 md:grid-cols-3">
 						{related.map((item) => (
 							<li key={item.slug}>
-								<Link to={`/services/${item.slug}`} className="flex items-center gap-3 rounded-2xl bg-[#f5f7fb] px-4 py-3 font-semibold">
-									<span className={`grid h-9 w-9 place-items-center rounded-xl ${item.tint}`}>
-										<Icon name={item.icon} className="h-4 w-4" />
+								<Link to={`/services/${item.slug}`} className="block overflow-hidden rounded-2xl bg-[#f5f7fb] font-semibold">
+									<img src={item.image} alt={item.imageAlt} className="aspect-[16/9] w-full object-cover" />
+									<span className="flex items-center gap-3 px-4 py-3">
+										<span className={`grid h-9 w-9 place-items-center rounded-xl ${item.tint}`}>
+											<Icon name={item.icon} className="h-4 w-4" />
+										</span>
+										{item.name}
 									</span>
-									{item.name}
 								</Link>
 							</li>
 						))}

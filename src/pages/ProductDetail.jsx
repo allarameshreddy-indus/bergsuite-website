@@ -1,8 +1,8 @@
 import { Helmet } from "react-helmet";
 import { Link, useParams } from "react-router-dom";
-import PageHero, { CtaBand } from "@/components/PageHero";
+import PageHero, { CtaBand, SectionPhoto } from "@/components/PageHero";
 import NotFound from "@/pages/NotFound";
-import { findBySlug, products, services } from "@/data/site";
+import { findBySlug, pageImages, products, services } from "@/data/site";
 
 export default function ProductDetail() {
 	const { slug } = useParams();
@@ -21,7 +21,12 @@ export default function ProductDetail() {
 				title={product.name}
 				lede={product.lede}
 				crumbs={[{ label: "Home", to: "/" }, { label: "Products", to: "/products" }, { label: product.name }]}
+				image={product.image}
+				imageAlt={product.imageAlt}
 			/>
+			<section className="mx-auto max-w-6xl px-4 pt-12 sm:px-6">
+				<SectionPhoto src={pageImages.platform[0]} alt={pageImages.platform[1]} />
+			</section>
 			<section className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2">
 				<div>
 					<h2 className="text-3xl font-extrabold tracking-tight">What it does</h2>
@@ -49,8 +54,9 @@ export default function ProductDetail() {
 					<ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
 						{services.slice(0, 4).map((service) => (
 							<li key={service.slug}>
-								<Link to={`/services/${service.slug}`} className="block rounded-2xl border border-[#e6eef6] px-4 py-3 font-semibold hover:border-[#c9def8]">
-									{service.name}
+								<Link to={`/services/${service.slug}`} className="block overflow-hidden rounded-2xl border border-[#e6eef6] font-semibold hover:border-[#c9def8]">
+									<img src={service.image} alt={service.imageAlt} className="aspect-[16/9] w-full object-cover" />
+									<span className="block px-4 py-3">{service.name}</span>
 								</Link>
 							</li>
 						))}
@@ -59,8 +65,9 @@ export default function ProductDetail() {
 					<ul className="mt-4 grid gap-3 md:grid-cols-3">
 						{others.map((item) => (
 							<li key={item.slug}>
-								<Link to={`/products/${item.slug}`} className="block rounded-2xl bg-[#f5f7fb] px-4 py-3 font-semibold">
-									{item.name}
+								<Link to={`/products/${item.slug}`} className="block overflow-hidden rounded-2xl bg-[#f5f7fb] font-semibold">
+									<img src={item.image} alt={item.imageAlt} className="aspect-[16/9] w-full object-cover" />
+									<span className="block px-4 py-3">{item.name}</span>
 								</Link>
 							</li>
 						))}

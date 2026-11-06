@@ -1,9 +1,9 @@
 import { Helmet } from "react-helmet";
 import { Link, useParams } from "react-router-dom";
 import InquiryForm from "@/components/InquiryForm";
-import PageHero from "@/components/PageHero";
+import PageHero, { SectionPhoto } from "@/components/PageHero";
 import NotFound from "@/pages/NotFound";
-import { findBySlug, jobs } from "@/data/site";
+import { findBySlug, jobs, pageImages } from "@/data/site";
 
 const roleOptions = [
 	{ value: "", label: "Select a role" },
@@ -36,7 +36,12 @@ export default function JobDetail() {
 					{ label: "Careers", to: "/careers" },
 					{ label: title },
 				]}
+				image={job?.image || pageImages.careers[0]}
+				imageAlt={job?.imageAlt || pageImages.careers[1]}
 			/>
+			<section className="mx-auto max-w-6xl px-4 pt-12 sm:px-6">
+				<SectionPhoto src={pageImages.hiring[0]} alt={pageImages.hiring[1]} />
+			</section>
 			<section className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.9fr_1.1fr]">
 				<div>
 					{job ? (
