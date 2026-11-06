@@ -480,7 +480,7 @@ export const pageImages = {
 	contact: ["/images/contact-conversation.jpg", "A quiet conversation in a navy meeting room"],
 	quote: ["/images/quote-planning.jpg", "A planning table with sketches, a navy folder, and an orange pencil"],
 	video: ["/images/video-stage.jpg", "A screening room facing an abstract blue and orange frame"],
-	delivery: ["/images/section-delivery.jpg", "Blank navy workshop panels marked only with blue tape and an orange tray"],
+	delivery: ["/images/section-delivery.jpg", "Four engineers reviewing blue diagrams on laptops and monitors in a navy office at dusk, under an orange lamp"],
 	platform: ["/images/section-platform.jpg", "A long control desk and abstract blue topology on dark glass"],
 	institution: ["/images/section-institution.jpg", "An evening courtyard of glass and stone with blue reflections and orange lanterns"],
 	hiring: ["/images/section-hiring.jpg", "A hiring conversation across a navy table in blue daylight"],
