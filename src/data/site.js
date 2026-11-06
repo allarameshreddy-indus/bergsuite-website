@@ -462,11 +462,25 @@ const mediaBySlug = {
 	"consulting-manager": ["/images/role-consulting-manager.jpg", "A person walking a navy corridor past glass rooms lit blue, with one orange doorway"],
 };
 
+const sectionBySlug = {
+	"application-development": ["/images/section-applications.jpg", "Two engineers reviewing a blocky mobile layout on a monitor, with a matching phone and an orange keyboard"],
+	"ai-data-solutions": ["/images/section-ai.jpg", "A researcher beside a curved screen of blue particle streams, adjusting a glass-and-orange node model"],
+	"cloud-devops": ["/images/section-cloud.jpg", "Two engineers walking a server aisle of blue lights, one holding a laptop, with an orange cable coiled on a cart"],
+	"product-engineering": ["/images/section-product.jpg", "Three people reviewing navy and white device mockups on a board, with one orange prototype and an orange stool"],
+	"data-analytics": ["/images/section-analytics.jpg", "An analyst at a white desk facing blue bars, a color heatmap, and an orange trend line"],
+	"staffing-consulting": ["/images/section-staffing.jpg", "Two people talking across a round white table in orange chairs against a navy wall"],
+};
+
 for (const item of [...services, ...products, ...industries, ...jobs]) {
 	const media = mediaBySlug[item.slug];
 	if (media) {
 		item.image = media[0];
 		item.imageAlt = media[1];
+	}
+	const section = sectionBySlug[item.slug];
+	if (section) {
+		item.sectionImage = section[0];
+		item.sectionImageAlt = section[1];
 	}
 }
 
@@ -480,7 +494,8 @@ export const pageImages = {
 	contact: ["/images/contact-conversation.jpg", "A quiet conversation in a navy meeting room"],
 	quote: ["/images/quote-planning.jpg", "A planning table with sketches, a navy folder, and an orange pencil"],
 	video: ["/images/video-stage.jpg", "A screening room facing an abstract blue and orange frame"],
-	delivery: ["/images/section-delivery.jpg", "Four engineers reviewing blue diagrams on laptops and monitors in a navy office at dusk, under an orange lamp"],
+	aboutPractice: ["/images/about-practice.jpg", "Three colleagues standing over printed sketches in a sunlit navy studio, one holding an orange cup"],
+	servicesOverview: ["/images/services-overview.jpg", "A mezzanine view of an engineering floor with separate desks, an orange lamp, and a glass meeting room"],
 	platform: ["/images/section-platform.jpg", "A long control desk and abstract blue topology on dark glass"],
 	institution: ["/images/section-institution.jpg", "An evening courtyard of glass and stone with blue reflections and orange lanterns"],
 	hiring: ["/images/section-hiring.jpg", "A hiring conversation across a navy table in blue daylight"],

@@ -42,7 +42,7 @@ export default function About() {
 				imageAlt={pageImages.about[1]}
 			/>
 			<section className="mx-auto max-w-6xl px-4 pt-12 sm:px-6">
-				<SectionPhoto src={pageImages.delivery[0]} alt={pageImages.delivery[1]} />
+				<SectionPhoto src={pageImages.aboutPractice[0]} alt={pageImages.aboutPractice[1]} />
 			</section>
 			<section className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.2fr_0.8fr]">
 				<div>

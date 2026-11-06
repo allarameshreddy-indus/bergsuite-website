@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { Icon } from "@/components/Icons";
 import PageHero, { CtaBand, SectionPhoto } from "@/components/PageHero";
 import NotFound from "@/pages/NotFound";
-import { findBySlug, pageImages, products, services } from "@/data/site";
+import { findBySlug, products, services } from "@/data/site";
 
 export default function ServiceDetail() {
 	const { slug } = useParams();
@@ -26,7 +26,7 @@ export default function ServiceDetail() {
 				imageAlt={service.imageAlt}
 			/>
 			<section className="mx-auto max-w-6xl px-4 pt-12 sm:px-6">
-				<SectionPhoto src={pageImages.delivery[0]} alt={pageImages.delivery[1]} />
+				<SectionPhoto src={service.sectionImage} alt={service.sectionImageAlt} />
 			</section>
 			<section className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.15fr_0.85fr]">
 				<div>

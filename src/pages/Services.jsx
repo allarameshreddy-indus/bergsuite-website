@@ -38,7 +38,7 @@ export default function Services() {
 					))}
 				</ul>
 				<div className="mt-10">
-					<SectionPhoto src={pageImages.delivery[0]} alt={pageImages.delivery[1]} />
+					<SectionPhoto src={pageImages.servicesOverview[0]} alt={pageImages.servicesOverview[1]} />
 				</div>
 			</section>
 			<CtaBand title="Not sure which practice you need?" body="Describe the outcome. We will tell you whether it is a product, a build, a data program, or a person on your team." />
