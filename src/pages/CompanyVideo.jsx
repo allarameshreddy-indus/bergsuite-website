@@ -8,12 +8,12 @@ export default function CompanyVideo() {
 	return (
 		<>
 			<Helmet>
-				<title>Company video · Kriyzen Technologies</title>
-				<meta name="description" content="A short introduction to Kriyzen Technologies: products, consulting, and how an engagement starts." />
+				<title>Company video · Bergsuite Infotech Pvt Ltd</title>
+				<meta name="description" content="A short introduction to Bergsuite Infotech Pvt Ltd: products, consulting, and how an engagement starts." />
 			</Helmet>
 			<PageHero
 				eyebrow="COMPANY VIDEO"
-				title="Watch how Kriyzen works."
+				title="Watch how Bergsuite Infotech Pvt Ltd works."
 				lede="A short introduction. Press play, or read the chapters if you would rather not watch."
 				crumbs={[{ label: "Home", to: "/" }, { label: "Company video" }]}
 				image={pageImages.video[0]}

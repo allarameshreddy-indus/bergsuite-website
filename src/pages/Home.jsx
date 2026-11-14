@@ -35,7 +35,7 @@ export default function Home() {
 	return (
 		<>
 			<Helmet>
-				<title>Kriyzen Technologies · Building Intelligent Solutions for a Better Tomorrow</title>
+				<title>Bergsuite Infotech Pvt Ltd · Building Intelligent Solutions for a Better Tomorrow</title>
 				<meta name="description" content={company.summary} />
 			</Helmet>
 
@@ -153,7 +153,7 @@ export default function Home() {
 					<p className="text-xs font-bold tracking-[0.22em] text-[#5c6d84]">HOW WE PRACTICE</p>
 					<h2 className="mt-3 max-w-2xl text-3xl font-extrabold tracking-tight sm:text-4xl">A product company that also delivers.</h2>
 					<p className="mt-4 max-w-2xl text-[#3d516c]">
-						Kriyzen builds its own software and works alongside clients. The consulting is not a separate story from the products. Pulse, Atlas, Harbor, and Forge are how we package what the teams already know how to run.
+						Bergsuite Infotech Pvt Ltd builds its own software and works alongside clients. The consulting is not a separate story from the products. Pulse, Atlas, Harbor, and Forge are how we package what the teams already know how to run.
 					</p>
 					<ul className="mt-8 grid gap-5 md:grid-cols-3">
 						{pillars.map((pillar) => (

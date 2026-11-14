@@ -13,7 +13,7 @@ export default function ProductDetail() {
 	return (
 		<>
 			<Helmet>
-				<title>{`${product.name} · Kriyzen Technologies`}</title>
+				<title>{`${product.name} · Bergsuite Infotech Pvt Ltd`}</title>
 				<meta name="description" content={product.summary} />
 			</Helmet>
 			<PageHero

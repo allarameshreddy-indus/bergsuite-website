@@ -8,8 +8,8 @@ export default function Quote() {
 	return (
 		<>
 			<Helmet>
-				<title>Get a Quote · Kriyzen Technologies</title>
-				<meta name="description" content="Request a quote from Kriyzen Technologies for a product, a build, or a consulting engagement." />
+				<title>Get a Quote · Bergsuite Infotech Pvt Ltd</title>
+				<meta name="description" content="Request a quote from Bergsuite Infotech Pvt Ltd for a product, a build, or a consulting engagement." />
 			</Helmet>
 			<PageHero
 				eyebrow="GET A QUOTE"

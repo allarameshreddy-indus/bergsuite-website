@@ -1,9 +1,9 @@
 export const company = {
-	name: "Kriyzen Technologies",
-	short: "Kriyzen",
+	name: "Bergsuite Infotech Pvt Ltd",
+	short: "Bergsuite",
 	tagline: "INNOVATION · TECHNOLOGY · PEOPLE",
 	summary:
-		"Kriyzen Technologies is a product and consulting company that helps businesses and institutions accelerate growth with AI, Data, Cloud and modern digital solutions.",
+		"Bergsuite Infotech Pvt Ltd is a product and consulting company that helps businesses and institutions accelerate growth with AI, Data, Cloud and modern digital solutions.",
 };
 
 export const stats = [
@@ -143,7 +143,7 @@ export const services = [
 		outcomes: [
 			"Practitioners matched to a role you can describe, not a keyword list",
 			"Consulting on architecture, delivery, and operating model",
-			"A Kriyzen lead who stays accountable when someone is embedded",
+			"A Bergsuite Infotech Pvt Ltd lead who stays accountable when someone is embedded",
 			"A path to hand the work back to your own team",
 		],
 		steps: [
@@ -166,7 +166,7 @@ export const heroChips = [
 export const products = [
 	{
 		slug: "pulse",
-		name: "Kriyzen Pulse",
+		name: "Bergsuite Pulse",
 		eyebrow: "Operations",
 		icon: "gauge",
 		summary: "A live operating picture for leaders who need demand, service levels, and exceptions without waiting on a monthly pack.",
@@ -181,7 +181,7 @@ export const products = [
 	},
 	{
 		slug: "atlas",
-		name: "Kriyzen Atlas",
+		name: "Bergsuite Atlas",
 		eyebrow: "Data platform",
 		icon: "chart",
 		summary: "The governed data layer for ingestion, quality, and access, so analytics and AI start from the same trusted sources.",
@@ -196,7 +196,7 @@ export const products = [
 	},
 	{
 		slug: "harbor",
-		name: "Kriyzen Harbor",
+		name: "Bergsuite Harbor",
 		eyebrow: "Cloud operations",
 		icon: "cloud",
 		summary: "Releases, reliability, and cloud cost in one place, for teams who have outgrown a pile of consoles.",
@@ -211,12 +211,12 @@ export const products = [
 	},
 	{
 		slug: "forge",
-		name: "Kriyzen Forge",
+		name: "Bergsuite Forge",
 		eyebrow: "Product delivery",
 		icon: "layers",
 		summary: "The workspace we use with clients to take a product from discovery through release and a clean handover.",
 		lede: "Forge keeps decisions, scope, and the release train in one system instead of a trail of documents.",
-		audience: "Product and engineering leads running a build with Kriyzen, or adopting the same rhythm on their own.",
+		audience: "Product and engineering leads running a build with Bergsuite Infotech Pvt Ltd, or adopting the same rhythm on their own.",
 		capabilities: [
 			"Discovery notes, decisions, and the scope they produced",
 			"A release plan the team and the sponsor can both read",
@@ -314,7 +314,7 @@ export const jobs = [
 		team: "Data & Analytics",
 		location: "India · Hybrid",
 		type: "Full-time",
-		summary: "Build pipelines and models on Kriyzen Atlas and on client platforms, with tests that make the numbers boring.",
+		summary: "Build pipelines and models on Bergsuite Atlas and on client platforms, with tests that make the numbers boring.",
 		responsibilities: [
 			"Own ingestion, modeling, and the checks that protect a published metric",
 			"Pair with analysts so a definition in a meeting becomes a definition in the warehouse",
@@ -402,7 +402,7 @@ export const jobs = [
 
 export const videoSlides = [
 	{
-		kicker: "Kriyzen Technologies",
+		kicker: "Bergsuite Infotech Pvt Ltd",
 		title: "Innovation, technology, and people.",
 		body: "We are a product and consulting company. We build software, and we stay until it is useful.",
 		image: "/images/video-stage.jpg",

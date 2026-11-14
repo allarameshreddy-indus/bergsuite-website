@@ -5,8 +5,8 @@ export default function NotFound() {
 	return (
 		<>
 			<Helmet>
-				<title>Page not found · Kriyzen Technologies</title>
-				<meta name="description" content="This page is not on the Kriyzen Technologies site." />
+				<title>Page not found · Bergsuite Infotech Pvt Ltd</title>
+				<meta name="description" content="This page is not on the Bergsuite Infotech Pvt Ltd site." />
 			</Helmet>
 			<section className="mx-auto max-w-3xl px-4 py-24 sm:px-6">
 				<p className="text-xs font-bold tracking-[0.2em] text-[#e06a00]">404</p>

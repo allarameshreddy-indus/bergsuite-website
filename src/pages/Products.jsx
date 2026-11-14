@@ -8,8 +8,8 @@ export default function Products() {
 	return (
 		<>
 			<Helmet>
-				<title>Products · Kriyzen Technologies</title>
-				<meta name="description" content="Kriyzen Pulse, Atlas, Harbor, and Forge. Four live products for operations, data, cloud, and delivery." />
+				<title>Products · Bergsuite Infotech Pvt Ltd</title>
+				<meta name="description" content="Bergsuite Pulse, Atlas, Harbor, and Forge. Four live products for operations, data, cloud, and delivery." />
 			</Helmet>
 			<PageHero
 				eyebrow="4+ PRODUCTS LIVE"

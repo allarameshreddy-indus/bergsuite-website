@@ -8,8 +8,8 @@ export default function Services() {
 	return (
 		<>
 			<Helmet>
-				<title>Services · Kriyzen Technologies</title>
-				<meta name="description" content="Application development, AI and data, cloud and DevOps, product engineering, analytics, and staffing from Kriyzen Technologies." />
+				<title>Services · Bergsuite Infotech Pvt Ltd</title>
+				<meta name="description" content="Application development, AI and data, cloud and DevOps, product engineering, analytics, and staffing from Bergsuite Infotech Pvt Ltd." />
 			</Helmet>
 			<PageHero
 				eyebrow="WHAT WE DO"

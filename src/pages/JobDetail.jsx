@@ -24,7 +24,7 @@ export default function JobDetail() {
 	return (
 		<>
 			<Helmet>
-				<title>{`${title} · Careers · Kriyzen Technologies`}</title>
+				<title>{`${title} · Careers · Bergsuite Infotech Pvt Ltd`}</title>
 				<meta name="description" content={lede} />
 			</Helmet>
 			<PageHero

@@ -103,26 +103,26 @@ function extractHelmetData(content, filePath, routes) {
   let title = cleanText(titleMatch?.[1]);
   if (!title || /[{}`]/.test(title)) {
     const fallbackTitles = {
-      Home: "Kriyzen Technologies",
-      About: "About · Kriyzen Technologies",
-      Services: "Services · Kriyzen Technologies",
-      ServiceDetail: "Service · Kriyzen Technologies",
-      Products: "Products · Kriyzen Technologies",
-      ProductDetail: "Product · Kriyzen Technologies",
-      Industries: "Industries · Kriyzen Technologies",
-      IndustryDetail: "Industry · Kriyzen Technologies",
-      Careers: "Careers · Kriyzen Technologies",
-      JobDetail: "Role · Kriyzen Technologies",
-      Contact: "Contact · Kriyzen Technologies",
-      Quote: "Get a Quote · Kriyzen Technologies",
-      CompanyVideo: "Company video · Kriyzen Technologies",
-      NotFound: "Page not found · Kriyzen Technologies",
+      Home: "Bergsuite Infotech Pvt Ltd",
+      About: "About · Bergsuite Infotech Pvt Ltd",
+      Services: "Services · Bergsuite Infotech Pvt Ltd",
+      ServiceDetail: "Service · Bergsuite Infotech Pvt Ltd",
+      Products: "Products · Bergsuite Infotech Pvt Ltd",
+      ProductDetail: "Product · Bergsuite Infotech Pvt Ltd",
+      Industries: "Industries · Bergsuite Infotech Pvt Ltd",
+      IndustryDetail: "Industry · Bergsuite Infotech Pvt Ltd",
+      Careers: "Careers · Bergsuite Infotech Pvt Ltd",
+      JobDetail: "Role · Bergsuite Infotech Pvt Ltd",
+      Contact: "Contact · Bergsuite Infotech Pvt Ltd",
+      Quote: "Get a Quote · Bergsuite Infotech Pvt Ltd",
+      CompanyVideo: "Company video · Bergsuite Infotech Pvt Ltd",
+      NotFound: "Page not found · Bergsuite Infotech Pvt Ltd",
     };
-    title = fallbackTitles[fileName] || "Kriyzen Technologies";
+    title = fallbackTitles[fileName] || "Bergsuite Infotech Pvt Ltd";
   }
   let description = cleanText(descMatch?.[1]);
   if (!description || /[{}`]/.test(description)) {
-    description = "Kriyzen Technologies builds products and consulting engagements in AI, data, cloud, and modern digital solutions.";
+    description = "Bergsuite Infotech Pvt Ltd builds products and consulting engagements in AI, data, cloud, and modern digital solutions.";
   }
   
   const url = routes instanceof Map && routes.has(fileName)

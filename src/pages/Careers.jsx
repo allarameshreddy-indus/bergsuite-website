@@ -14,8 +14,8 @@ export default function Careers() {
 	return (
 		<>
 			<Helmet>
-				<title>Careers · Kriyzen Technologies</title>
-				<meta name="description" content="Open roles at Kriyzen Technologies across engineering, data, design, and consulting." />
+				<title>Careers · Bergsuite Infotech Pvt Ltd</title>
+				<meta name="description" content="Open roles at Bergsuite Infotech Pvt Ltd across engineering, data, design, and consulting." />
 			</Helmet>
 			<PageHero
 				eyebrow="50+ PROFESSIONALS"

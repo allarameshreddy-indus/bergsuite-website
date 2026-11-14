@@ -176,7 +176,7 @@ export default function Header() {
 	return (
 		<header className="sticky top-0 z-50 border-b border-[#e7eef6] bg-white/95 backdrop-blur">
 			<div className="relative mx-auto flex h-[4.7rem] max-w-7xl items-center justify-between gap-3 px-4 sm:px-6">
-				<Link to="/" className="relative z-10 shrink-0 rounded-lg" aria-label="Kriyzen Technologies, home">
+				<Link to="/" className="relative z-10 shrink-0 rounded-lg" aria-label="Bergsuite Infotech Pvt Ltd, home">
 					<Logo compact />
 				</Link>
 

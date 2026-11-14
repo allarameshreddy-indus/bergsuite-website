@@ -12,7 +12,7 @@ export default function IndustryDetail() {
 	return (
 		<>
 			<Helmet>
-				<title>{`${industry.name} · Kriyzen Technologies`}</title>
+				<title>{`${industry.name} · Bergsuite Infotech Pvt Ltd`}</title>
 				<meta name="description" content={industry.summary} />
 			</Helmet>
 			<PageHero

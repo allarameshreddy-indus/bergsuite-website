@@ -16,8 +16,8 @@ export default function Contact() {
 	return (
 		<>
 			<Helmet>
-				<title>Contact · Kriyzen Technologies</title>
-				<meta name="description" content="Contact Kriyzen Technologies about a product, a consulting engagement, or a role." />
+				<title>Contact · Bergsuite Infotech Pvt Ltd</title>
+				<meta name="description" content="Contact Bergsuite Infotech Pvt Ltd about a product, a consulting engagement, or a role." />
 			</Helmet>
 			<PageHero
 				eyebrow="CONTACT"

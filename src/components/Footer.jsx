@@ -26,7 +26,7 @@ export default function Footer() {
 		<footer className="bg-[#071633] text-slate-300">
 			<div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 sm:grid-cols-2 lg:grid-cols-6">
 				<div className="sm:col-span-2">
-					<Link to="/" aria-label="Kriyzen Technologies, home">
+					<Link to="/" aria-label="Bergsuite Infotech Pvt Ltd, home">
 						<Logo variant="light" />
 					</Link>
 					<p className="mt-4 max-w-sm text-sm leading-6 text-slate-300">{company.summary}</p>
@@ -66,7 +66,7 @@ export default function Footer() {
 			</div>
 			<div className="border-t border-white/10">
 				<div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-5 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between sm:px-6">
-					<p>© {new Date().getFullYear()} Kriyzen Technologies. All rights reserved.</p>
+					<p>© {new Date().getFullYear()} Bergsuite Infotech Pvt Ltd. All rights reserved.</p>
 					<p>Product engineering, data, cloud, and consulting.</p>
 				</div>
 			</div>

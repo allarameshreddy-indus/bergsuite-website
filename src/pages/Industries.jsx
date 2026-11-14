@@ -8,8 +8,8 @@ export default function Industries() {
 	return (
 		<>
 			<Helmet>
-				<title>Industries · Kriyzen Technologies</title>
-				<meta name="description" content="Kriyzen Technologies works with education, healthcare, financial services, manufacturing, and the public sector." />
+				<title>Industries · Bergsuite Infotech Pvt Ltd</title>
+				<meta name="description" content="Bergsuite Infotech Pvt Ltd works with education, healthcare, financial services, manufacturing, and the public sector." />
 			</Helmet>
 			<PageHero
 				eyebrow="5+ INDUSTRIES"

@@ -14,7 +14,7 @@ export default function ServiceDetail() {
 	return (
 		<>
 			<Helmet>
-				<title>{`${service.name} · Kriyzen Technologies`}</title>
+				<title>{`${service.name} · Bergsuite Infotech Pvt Ltd`}</title>
 				<meta name="description" content={service.summary} />
 			</Helmet>
 			<PageHero

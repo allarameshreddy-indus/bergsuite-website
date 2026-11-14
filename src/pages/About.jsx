@@ -30,7 +30,7 @@ export default function About() {
 	return (
 		<>
 			<Helmet>
-				<title>About · Kriyzen Technologies</title>
+				<title>About · Bergsuite Infotech Pvt Ltd</title>
 				<meta name="description" content={company.summary} />
 			</Helmet>
 			<PageHero
@@ -48,7 +48,7 @@ export default function About() {
 				<div>
 					<h2 className="text-3xl font-extrabold tracking-tight">What we are here to do</h2>
 					<p className="mt-4 leading-7 text-[#3d516c]">
-						Kriyzen Technologies helps businesses and institutions move from a pile of tools to software that people rely on. Some of that work is a product we run ourselves. Some of it is a team embedded with a client. The standard is the same: the outcome should be visible, the architecture should be explainable, and the handover should be real.
+						Bergsuite Infotech Pvt Ltd helps businesses and institutions move from a pile of tools to software that people rely on. Some of that work is a product we run ourselves. Some of it is a team embedded with a client. The standard is the same: the outcome should be visible, the architecture should be explainable, and the handover should be real.
 					</p>
 					<p className="mt-4 leading-7 text-[#3d516c]">
 						We keep partnerships few and long. Ten and more organizations work with us across product builds, data platforms, and cloud programs. We do not decorate this site with logos. If a partnership is public, it can be told properly. Until then, the work speaks through the products and the industries we serve.
@@ -105,7 +105,7 @@ export default function About() {
 					))}
 				</ol>
 			</section>
-			<CtaBand title="Work with Kriyzen." body="Tell us about the institution, the product, or the team you need. We will reply with a clear next step." />
+			<CtaBand title="Work with Bergsuite Infotech Pvt Ltd." body="Tell us about the institution, the product, or the team you need. We will reply with a clear next step." />
 		</>
 	);
 }
